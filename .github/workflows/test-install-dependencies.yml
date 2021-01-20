@@ -16,3 +16,28 @@ jobs:
       - uses: actions/checkout@v2
       - run: cp ci/fedora.vagrant Vagrantfile
       - run: vagrant up
+
+  install-rpi:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: brew install qemu
+      - run: git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git
+        # TODO(PM): Upload archive somewhere more appropriate
+      - run: wget http://philipmolloy.com/2021-01-11-raspios-buster-armhf-lite.zip
+      - run: unzip 2021-01-11-raspios-buster-armhf-lite.zip
+      - run: qemu-system-arm -machine help
+      - run: qemu-system-arm
+               -machine versatilepb
+               -cpu arm1176
+               -m 256
+               -drive "file=2021-01-11-raspios-buster-armhf-lite.img,if=none,index=0,media=disk,format=raw,id=disk0"
+               -device "virtio-blk-pci,drive=disk0,disable-modern=on,disable-legacy=off"
+               -net "user,hostfwd=tcp::5022-:22"
+               -dtb qemu-rpi-kernel/versatile-pb-buster-5.4.51.dtb
+               -kernel qemu-rpi-kernel/kernel-qemu-5.4.51-buster
+               -append 'root=/dev/vda2 panic=1'
+               -nographic
+               -no-reboot &
+      - run: sleep 2m
+      - run: ssh -i id_rsa -o StrictHostKeyChecking=accept-new -p 5022 pi@localhost cat /etc/os-release

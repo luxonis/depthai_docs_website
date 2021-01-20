@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+#   Luxonis DepthAI dependency installer
+#
 
 set -e
 
