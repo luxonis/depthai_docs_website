@@ -96,6 +96,15 @@ Windows
 Install from PyPi
 #################
 
+PyPI
+Docker
+Podman
+VirtualBox
+QEMU
+apt
+rpm
+C++
+
 Our packages are distributed `via PyPi <https://pypi.org/project/depthai/>`__, to install it in your environment use
 
 .. code-block:: bash
