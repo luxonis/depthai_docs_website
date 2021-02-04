@@ -102,18 +102,21 @@ video {
 }
 
 #lux-global-navbar {
+    top: 0px;
     background: #434c6b;
 }
 
 #lux-doc-navbar {
+    top: 78px;
     background: #7d86a8;
 }
 
 .lux-navbar-container {
     padding: 1.5em 0;
+    width: 100%;
     height: auto;
-    position: relative;
     overflow: auto;
+    z-index: 100;
 }
 
 .lux-navbar {
@@ -145,24 +148,12 @@ video {
 }
 
 .wy-nav-side {
-    position: relative;
-    float: left;
+    top: 146px;
     background: #eeeeee;
 }
 
-.wy-nav-content {
-    overflow: auto;
-}
-
-.wy-nav-top {
-    max-height: 100px;
-}
-
-@media screen and (max-width: 768px) {
-    .wy-nav-side {
-        left:-300px;
-        position: fixed;
-    }
+.sticky {
+    top: 0;
 }
 
 #version {
