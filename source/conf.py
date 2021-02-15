@@ -69,9 +69,10 @@ html_static_path = ['_static']
 html_favicon = '_static/images/favicon.png'
 html_css_files = [
     'css/index.css',
+    'css/navbar.css',
 ]
 html_js_files = [
-    'js/custom.js',
+    'js/navbar.js',
 ]
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}

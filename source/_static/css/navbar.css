@@ -1,0 +1,100 @@
+
+.cta-row-short h5 {
+    margin-bottom: 0;
+}
+
+#lux-global-navbar {
+    top: 0px;
+    background: #434c6b;
+}
+
+#lux-doc-navbar {
+    top: 78px;
+    background: #7d86a8;
+}
+
+.lux-navbar-container {
+    padding: 1.5em 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    z-index: 100;
+}
+
+.lux-navbar {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.lux-navbar ul {
+    float: left;
+    vertical-align: middle;
+}
+
+.lux-navbar ul > li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lux-navbar a {
+    padding: 8px 13px;
+    color: #b4b7c4;
+}
+
+.lux-navbar a > img {
+    max-width: 110px;
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.lux-navbar .lux-navbar-active {
+    color: white;
+    font-weight: bold;
+}
+
+.wy-nav-side {
+    top: 146px;
+    background: #eeeeee;
+}
+
+.sticky {
+    top: 0;
+}
+
+#version {
+    color: white;
+}
+
+div[role=search] {
+    margin-top: 1em;
+}
+
+.wy-side-nav-search {
+    background-color: #eeeeee;
+}
+
+.wy-nav-top {
+    background-color: #eeeeee;
+}
+
+.wy-menu-vertical li ul li a {
+ color:#404040;
+}
+.wy-menu-vertical a {
+ color:#404040
+}
+.wy-menu-vertical a:hover {
+ background-color:#cccccc;
+}
+.wy-menu-vertical a:hover span.toctree-expand {
+ color:#404040
+}
+.wy-menu-vertical a:active {
+ background-color:#2980B9;
+ color:#fff
+}
+.wy-menu-vertical a:active span.toctree-expand {
+ color:#fff
+}
