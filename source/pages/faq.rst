@@ -385,6 +385,12 @@ My Model Requires Pre-Processing (normalization, for example).  How do I do that
 ############################################################################################
 
 The OpenVINO toolkit allows adding these pre-processing steps to your model, and then these steps are performed automatically by DepthAI.  See `here <https://docs.openvinotoolkit.org/latest/openvino_docs_MO_DG_prepare_model_convert_model_Converting_Model_General.html#when_to_specify_mean_and_scale_values>`__ for how to take advantage of this.
+For instance, to scale frame pixels to the range [0,1], add to the model optimizer the following parameters:
+
+..code-block:: bash
+
+  --data_type=FP16 --scale_values [255,255,255]
+
 
 Can I Run Multiple Neural Models in Parallel or in Series (or Both)?
 ####################################################################
