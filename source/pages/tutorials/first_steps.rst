@@ -206,40 +206,57 @@ models that you can use, having just the demo script downloaded
 
 
 .. list-table:: Available models
-  :widths: 40 40 20
+  :widths: 30 50 10 10
+  :header-rows: 1
+  :align: center
 
+  * - Name
+    - Purpose
+    - FPS
+    - Links
   * - :code:`deeplabv3p_person`
     - People segmentation
+    - 22.1
     - :ref:`Usage <deeplabv3p_person>`
   * - :code:`face-detection-adas-0001`
     - Face detection
+    - 6.4
     - :ref:`Usage <face-detection-adas-0001>`
   * - :code:`face-detection-retail-0004`
     - Face detection
+    - 26.7
     - :ref:`Usage <face-detection-retail-0004>`
   * - :code:`mobilenet-ssd`
     - Object detection (20 classes)
+    - 22.3
     - :ref:`Usage <mobilenet-ssd>`
   * - :code:`pedestrian-detection-adas-0002`
     - People detection
+    - 5.6
     - :ref:`Usage <pedestrian-detection-adas-0002>`
   * - :code:`person-detection-retail-0013`
     - People detection
+    - 9.4
     - :ref:`Usage <person-detection-retail-0013>`
   * - :code:`person-vehicle-bike-detection-crossroad-1016`
     - People, vehicle and bike detection
+    - 5.7
     - :ref:`Usage <person-vehicle-bike-detection-crossroad-1016>`
   * - :code:`yolo-v3`
     - Object detection (80 classes)
+    - 1.6
     - :ref:`Usage <yolo-v3>`
   * - :code:`tiny-yolo-v3`
     - Object detection (80 classes)
+    - 26.2
     - :ref:`Usage <tiny-yolo-v3>`
   * - :code:`vehicle-detection-adas-0002`
     - Vehicle detection
+    - 5.5
     - :ref:`Usage <vehicle-detection-adas-0002>`
   * - :code:`vehicle-license-plate-detection-barrier-0106`
     - License plate detection
+    - 27.8
     - :ref:`Usage <vehicle-license-plate-detection-barrier-0106>`
 
 .. _deeplabv3p_person:
