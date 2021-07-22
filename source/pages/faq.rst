@@ -1142,7 +1142,10 @@ We could support a UVC stream per camera if it is of interest.
 
 So if you would like this functionality please feel subscribe to the Github feature request `here <https://github.com/luxonis/depthai/issues/283>`__.
 
-And in the meantime, if you would like to use depthai as a standard UVC camera, it is possible to use V4L2 loopback device (and some users have informed us that they have done so), but linking the output of the depthai API config into this loopback device on the host.  We do not yet have instructions on this, but will circle back if/when we do.
+And in the meantime, if you would like to use depthai as a standard UVC camera, it is possible to use V4L2 loopback device (and some users have informed 
+us that they have done so), but linking the output of the depthai API config into this loopback device on the host.  
+
+Check our quick guide on how to do that `here <https://docs.luxonis.com/en/latest/pages/faq/#how-to-run-oak-d-as-video-device>`__.
 
 How Do I Force USB2 Mode?
 #########################
@@ -1329,9 +1332,9 @@ To run UVC directly (still needing the depthai library, but just for initializat
   python3 examples/install_requirements.py
   python3 examples/19_uvc_video.py
 
-  Keep the script open. It’s needed to periodically feed the device watchdog (would reset the device on close). And then open some UVC viewer. It should work 
-  all good on Linux. On macOS, it needs a workaround (having some app looking for devices and opening the stream quickly after the depthai pipeline is started), 
-  while on Windows, it doesn’t work yet.
+Keep the script open. It’s needed to periodically feed the device watchdog (would reset the device on close). And then open some UVC viewer. It should work 
+all good on Linux. On macOS, it needs a workaround (having some app looking for devices and opening the stream quickly after the depthai pipeline is started), 
+while on Windows, it doesn’t work yet.
 
 You can also try using `Flask Opencv Streamer <https://pypi.org/project/flask-opencv-streamer/>`__ to generate a local stream, pick it up with `FFmpeg <https://www.ffmpeg.org/documentation.html>`__ and pipe it to a v4l loopback device.
 
