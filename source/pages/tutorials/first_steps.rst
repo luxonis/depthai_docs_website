@@ -627,4 +627,4 @@ In the previous sections, we learned how to preview basic DepthAI features. From
 
   Visit :ref:`Custom training` page for ready to use Colab notebooks
 
-.. include::  /pages/includes/footer-long.rst
+.. include::  /pages/includes/footer-short.rst

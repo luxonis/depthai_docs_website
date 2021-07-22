@@ -10,7 +10,7 @@ at 1,000 Mbps (1 Gbps) full-duplex at up to 100 meters (328 feet).
 
 .. image:: https://user-images.githubusercontent.com/18037362/125928421-daed2432-73fb-4c5b-843e-037c7383a871.gif
 
-*After connecting the PoE device, LED should start flashing.*
+*After connecting the PoE device, the Ethernet connectivity LED (shown above) should turn on and start occasionally flashing.*
 
 Step by step tutorial
 *********************
@@ -35,30 +35,33 @@ the Mx ID to specify to which DepthAI PoE device you would want to connect to
 (`more info here <https://docs.luxonis.com/projects/api/en/latest/tutorials/multiple/>`__).
 
 
-DHCP and static IP
-******************
+PoE Troubleshooting
+*******************
 
-By default, PoE devices will try to get a dynamic IP from the DHCP. If DHCP isn't available on the network,
-devices will have a static IP :code:`169.254.1.222`, so your computer will need to be in the same range. This can
-be achieved by setting a static IP on your computer (eg. static IP: :code:`169.254.1.10`, netmask: :code:`255.255.0.0`).
+- **DHCP and Static IP**
+    By default, PoE devices will try to pull an IP address from DHCP. If a DHCP server isn't available on the network,
+    devices will fall back to static IP :code:`169.254.1.222`.  In this static fall-back case, your computer will need to be in the same range. This can
+    be achieved by setting a static IP on your computer (e.g. with static IP: :code:`169.254.1.10` and netmask: :code:`255.255.0.0`).
 
-Ports and Firewall
-******************
+- **Ports and Firewall**
+    UDP Device discovery is handled on port :code:`11491`, and TCP XLink connection is handled on port :code:`11490`.
+    
+    On Ubuntu by default the firewall is disabled, so you shouldn't have any issues. You can check this though by executing the following command:
 
-UDP Device discovery is handled on port :code:`11491`, and TCP XLink connection is handled on port :code:`11490`.
-By default, the firewall is disabled, so you shouldn't have any issues. You can check this by executing the following command:
+    .. code-block:: bash
 
-.. code-block:: bash
+      > sudo ufw status
+      Status: inactive
 
-  > sudo ufw status
-  Status: inactive
+    If you have your firewall enabled, you might need to allow these two ports:
 
-But if you have firewall enabled, you might need to allow these two ports:
+    .. code-block:: bash
 
-.. code-block:: bash
+      sudo ufw allow 11490/tcp
+      sudo ufw allow 11491/udp
 
-  sudo ufw allow 11490/tcp
-  sudo ufw allow 11491/udp
+- **VPN connection**
+    VPN connectivity could also disrupt the connection with the PoE device (as your computer may be searching only the remote network for the device, so would be unable to discover it on the local network), so we suggest turning the VPN off when using the PoE devices or otherwise ensuring that your local routing is setup such that local devices are usable/discoveragle while VPN connectivity is active.
 
 
-.. include::  /includes/footer-short.rst
+.. include::  /pages/includes/footer-short.rst

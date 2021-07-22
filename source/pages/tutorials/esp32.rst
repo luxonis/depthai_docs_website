@@ -97,4 +97,4 @@ How to get started with the development
 #. After building, you can flash your ESP32 using :code:`idf.py -p PORT flash monitor` (replace :code:`PORT` with the ESP32 port, eg. :code:`/dev/ttyUSB0`). You might need to change the permission of the port with :code:`sudo chmod 777 PORT` so idf.py can access it.
 #. After flashing the ESP32, you can start the pipeline. If you have used a demo ESP32 code, you should run the corresponding python script from `gen2-spi demos <https://github.com/luxonis/depthai-experiments/tree/master/gen2-spi>`__.
 
-.. include::  /includes/footer-short.rst
+.. include::  /pages/includes/footer-short.rst
